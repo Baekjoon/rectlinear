@@ -21,7 +21,7 @@ $(function() {
     var tbody = $('table#lattice-table tbody');
     var col = tbody.parent().parent().width();
     var row = $(window).height();
-    row -= 20;
+    row -= 50;
     console.log(row);
     var n = parseInt(row/8.2);
     var m = parseInt(col/8.2);
@@ -57,7 +57,7 @@ $(function() {
         q.forEach(function(e) {
             r.append(e[0] + ' ' + e[1] + '\n');
         });
-        r.append('\n');
+        //r.append('\n');
         SelectText('result');
         $('html, body').animate({
             scrollTop: $('#result').offset().top
