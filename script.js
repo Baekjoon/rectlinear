@@ -57,7 +57,7 @@ $(function() {
         q.forEach(function(e) {
             r.append(e[0] + ' ' + e[1] + '\n');
         });
-        r.append('\n');
+        //r.append('\n');
         SelectText('result');
         $('html, body').animate({
             scrollTop: $('#result').offset().top
