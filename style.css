@@ -1,0 +1,16 @@
+body {
+    padding-top: 20px;
+}
+.table-bordered>tbody>tr>td {
+    font-size: 1px;
+    padding: 3px;
+}
+.table-bordered>tbody>tr>td.selected {
+    background-color: black;
+}
+.table-bordered>tbody>tr>td.selected.change-dir {
+    background-color: red;
+}
+.table-bordered>tbody>tr>td.selected.start {
+    background-color: orange;
+}
