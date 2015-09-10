@@ -19,8 +19,12 @@ function SelectText(element) {
 
 $(function() {
     var tbody = $('table#lattice-table tbody');
-    var n = 70;
-    var m = 100;
+    var col = tbody.parent().parent().width();
+    var row = $(window).height();
+    row -= 20;
+    console.log(row);
+    var n = parseInt(row/8.2);
+    var m = parseInt(col/8.2);
     for (var i=0; i<n; i++) {
         var tr = $('<tr></tr>');
         tbody.append(tr);
@@ -48,12 +52,16 @@ $(function() {
     }
     var done = function() {
         var r = $('#result');
+        r.parent().parent().show();
         r.append(q.length+'\n');
         q.forEach(function(e) {
             r.append(e[0] + ' ' + e[1] + '\n');
         });
         r.append('\n');
         SelectText('result');
+        $('html, body').animate({
+            scrollTop: $('#result').offset().top
+        }, 500);
     }
     var visit = function(x,y) {
         s[makecell(x,y)] = true;
